@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001
 // Middleware
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://video-transcript-platform-qhk2ohevt.vercel.app'
+    'https://video-transcript-platform-fkj0e7hu7.vercel.app'
 ]
 
 app.use(cors({
