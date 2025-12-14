@@ -41,11 +41,27 @@ def download_video(url, output_path):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'en-us,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
             'Sec-Fetch-Mode': 'navigate',
         },
         'socket_timeout': 30,
-        'retries': 3,
-        'fragment_retries': 3,
+        'retries': 5,
+        'fragment_retries': 5,
+        # YouTube-specific options to avoid bot detection
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'skip': ['hls', 'dash'],
+            }
+        },
+        # Use IPv4 to avoid some rate limiting
+        'source_address': '0.0.0.0',
+        # Add more realistic browser behavior
+        'geo_bypass': True,
+        'age_limit': None,
     }
     
     # Add referer for TikTok
