@@ -1,0 +1,7 @@
+.platform-detector {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    animation: fadeIn 0.3s ease-out;
+}

@@ -1,0 +1,17 @@
+# Render.com Deployment Configuration
+# This file tells Render how to build and run your service
+
+# Service Type: Web Service
+# Build Command: ./build.sh
+# Start Command: npm start
+
+# Environment:
+# - Node.js 20
+# - Python 3.11
+
+# System Dependencies (auto-installed by Render):
+# - ffmpeg (available in Render's environment)
+# - yt-dlp (installed via pip in build.sh)
+# - faster-whisper (installed via pip in build.sh)
+
+# Health Check Path: /api/health
